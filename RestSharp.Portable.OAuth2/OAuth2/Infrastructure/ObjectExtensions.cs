@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Reflection;
 
 namespace RestSharp.Portable.Authenticators.OAuth2.Infrastructure
 {
@@ -13,8 +14,8 @@ namespace RestSharp.Portable.Authenticators.OAuth2.Infrastructure
         /// </summary>
         public static bool AllPropertiesAreEqualTo(this object @this, object other)
         {
-            var thisProperties = @this.GetType().GetProperties().Where(x => x.CanRead).ToList();
-            var otherProperties = other.GetType().GetProperties().Where(x => x.CanRead).ToList();
+            var thisProperties = @this.GetType().GetRuntimeProperties().Where(x => x.CanRead).ToList();
+            var otherProperties = other.GetType().GetRuntimeProperties().Where(x => x.CanRead).ToList();
 
             return (from thisProperty in thisProperties
                     let otherProperty = otherProperties.FirstOrDefault(

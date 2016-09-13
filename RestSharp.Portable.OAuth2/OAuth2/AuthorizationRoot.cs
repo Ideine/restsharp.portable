@@ -57,7 +57,7 @@ namespace RestSharp.Portable.Authenticators.OAuth2
         /// </summary>        
         protected virtual IEnumerable<Type> GetClientTypes()
         {
-            return Assembly.GetExecutingAssembly().GetTypes().Where(typeof (IClient).IsAssignableFrom);
+			return GetType().GetTypeInfo().Assembly.DefinedTypes.Where(typeof(IClient).GetTypeInfo().IsAssignableFrom).Select(x => x.AsType());
         }
     }
 }

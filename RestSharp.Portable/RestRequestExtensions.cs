@@ -5,6 +5,8 @@ using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Reflection;
+
 
 namespace RestSharp.Portable
 {
@@ -76,7 +78,7 @@ namespace RestSharp.Portable
         {
             // automatically create parameters from object props
             var type = obj.GetType();
-            var props = type.GetProperties();
+            var props = type.GetRuntimeProperties();
 
             var objProps = objProperties == null ? null : objProperties.Where(x => x != null).ToList();
 
@@ -113,7 +115,7 @@ namespace RestSharp.Portable
                         var elementType = propType.GetElementType();
 
                         if (((Array)val).Length > 0 &&
-                            (elementType.IsPrimitive || elementType.IsValueType || elementType == typeof(string)))
+                            (elementType.GetTypeInfo().IsPrimitive || elementType.GetTypeInfo().IsValueType || elementType == typeof(string)))
                         {
                             // convert the array to an array of strings
                             var values =

@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Reflection;
 
 namespace RestSharp.Portable.HttpClientImpl
 {
@@ -21,7 +22,7 @@ namespace RestSharp.Portable.HttpClientImpl
         /// </summary>
         public DefaultHttpClientFactory()
         {
-            _proxyProperty = typeof(HttpClientHandler).GetProperty("Proxy");
+            _proxyProperty = typeof(HttpClientHandler).GetRuntimeProperty("Proxy");
         }
 
         /// <summary>
