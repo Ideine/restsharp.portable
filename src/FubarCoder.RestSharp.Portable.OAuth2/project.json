@@ -73,7 +73,7 @@
     "netstandard1.0": {
       "imports": [ "dotnet" ],
       "dependencies": {
-        "System.Dynamic.Runtime": "4.0.11"
+        "System.Dynamic.Runtime": "4.3.0"
       }
     },
     "net40": {

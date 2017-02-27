@@ -60,7 +60,7 @@
         "define": [ "USE_BOUNCYCASTLE", "USE_TASKEX" ]
       },
       "dependencies": {
-        "Portable.BouncyCastle": "1.8.1"
+        "Portable.BouncyCastle": "1.8.1.2"
       }
     },
     ".NETPortable,Version=v4.5,Profile=Profile259": {
@@ -68,7 +68,7 @@
         "define": [ "USE_BOUNCYCASTLE" ]
       },
       "dependencies": {
-        "Portable.BouncyCastle": "1.8.1"
+        "Portable.BouncyCastle": "1.8.1.2"
       }
     },
     "netstandard1.0": {
@@ -77,7 +77,7 @@
         "define": [ "USE_BOUNCYCASTLE" ]
       },
       "dependencies": {
-        "Portable.BouncyCastle": "1.8.1"
+        "Portable.BouncyCastle": "1.8.1.2"
       }
     },
     "netstandard1.3": {
@@ -86,7 +86,7 @@
         "additionalArguments": [ "/ruleset:../../ReleaseRules.ruleset", "/additionalfile:../../stylecop.json" ]
       },
       "dependencies": {
-        "System.Security.Cryptography.Algorithms": "4.2.0",
+        "System.Security.Cryptography.Algorithms": "4.3.0",
         "StyleCop.Analyzers": {
           "type": "build",
           "version": "1.0.0"
@@ -105,7 +105,7 @@
         "define": [ "USE_BOUNCYCASTLE", "USE_TASKEX" ]
       },
       "dependencies": {
-        "Portable.BouncyCastle": "1.8.1"
+        "Portable.BouncyCastle": "1.8.1.2"
       }
     },
     "MonoAndroid10": {
